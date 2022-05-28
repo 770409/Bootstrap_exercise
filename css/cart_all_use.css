@@ -91,6 +91,10 @@ h1 {
 .bg-green-300 {
     background-color: rgba(110,231,183,1);
 }
+.bg-green-405 {
+    background-color: rgb(16,185,129);
+}
+
 
 /*----text color-------*/
 .text-gray-400 {
