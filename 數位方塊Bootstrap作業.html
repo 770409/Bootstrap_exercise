@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數位作業</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+    integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/all.css">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</head>
+
+
+
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0px;
+    padding: 0px;
+    scroll-behavior: smooth;
+    
+
+  }
+
+  h1,
+  h2 {
+    color: #111827;
+  }
+
+  p {
+    color: #4B5563;
+  }
+
+  .fontWW {
+    font-weight: 400;
+  }
+
+  .ppcolor {
+    color: #6366F1;
+  }
+
+  .ppBcolor {
+    background-color: #6366F1;
+  }
+
+
+
+
+  .navbar .qq {
+    width: 100%;
+  }
+
+  .logo {
+    height: 30px;
+    transition: .1s;
+    border-radius: 3px;
+  }
+
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+  .fa-cart-shopping {
+    font-size: 24px;
+  }
+
+  .fa-circle-user {
+    font-size: 30px;
+    color: #374151;
+  }
+
+  .navbar-light .navbar-nav .active>.nav-link,
+  .navbar-light .navbar-nav .nav-link.active,
+  .navbar-light .navbar-nav .nav-link.show,
+  .navbar-light .navbar-nav .show>.nav-link {
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .1s;
+
+
+  }
+
+  .navbar-light .navbar-nav .active .rounded-lg:hover {
+    background-color: rgba(17, 24, 39, .1);
+    color: #000;
+  }
+
+  .navbar-light .navbar-nav .active .rounded-lg:active {
+    outline: .8px solid rgba(0, 0, 0, .5);
+    outline-offset: 2px;
+  }
+  .act1:active{
+    outline: .8px solid rgba(0, 0, 0, .5);
+    border-radius: 3px;
+    outline-offset: 6px;
+  }
+
+
+  .dropdown-menu {
+    left: -90px;
+    min-width: 12rem;
+    font-size: 14px;
+    border-radius: 0.375rem;
+    border-width: 0;
+
+  }
+
+  .dropdown-menu .dropdown-item {
+    color: #374151;
+    font-weight: 600;
+  }
+
+  .dropdown-menu .dropdown-item:hover {
+    background: #E5E7EB;
+    border-radius: 0.5rem;
+    transition: .3s;
+
+  }
+
+  .navbar-expand-lg .container {
+    max-width: 100%;
+    padding: 0 16px;
+  }
+
+  /* 按鈕 */
+  .navbar-light .navbar-toggler {
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: .1s;
+  }
+
+  .navbar-light .navbar-toggler:active {
+    outline: .8px solid rgba(0, 0, 0, .5);
+    outline-offset: 2px;
+  }
+
+  .navbar-light .navbar-toggler .menu2 {
+    display: none;
+  }
+
+
+  .navbar-light .navbar-toggler:focus .menu1 {
+    display: none;
+
+  }
+
+  .navbar-light .navbar-toggler:focus .menu2 {
+    display: block;
+
+  }
+
+
+
+  .collapse:not(.show) {
+    display: flex !important;
+  }
+
+  @media (max-width: 992px) {
+    .navbar-light .navbar-toggler .menu1 {
+      display: none;
+    }
+
+    .navbar-nav {
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    .navbar-collapse {
+      flex-basis: 0%;
+
+    }
+  }
+
+  @media(max-width:768px) {
+    .collapse:not(.show) {
+      display: none !important;
+    }
+
+    .navbar-light .navbar-toggler .menu1 {
+      display: block;
+    }
+
+    .navbar-nav {
+      flex-direction: column;
+    }
+
+    .navbar-collapse {
+      flex-basis: 100%;
+
+    }
+
+
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position:absolute;
+      left:0px;
+      width:100%;
+
+    }
+  }
+
+
+  /* ----------------------------------- */
+
+
+
+  @media (min-width: 576px) {
+    .logo {
+      height: 45px;
+
+    }
+  }
+
+
+  @media (min-width: 768px) {
+    .navbar-expand-lg .container {
+
+      padding: 0 24px;
+
+
+    }
+
+    .navbar-light .navbar-nav .active>.nav-link,
+    .navbar-light .navbar-nav .nav-link.active,
+    .navbar-light .navbar-nav .nav-link.show,
+    .navbar-light .navbar-nav .show>.nav-link {
+      height: 51.98px;
+      line-height: 35.82px;
+
+    }
+
+    .logo {
+      height: 60px;
+    }
+
+  }
+
+
+
+
+
+  @media (min-width: 1024px) {
+    .navbar-expand-lg .container {
+      /* max-width: 100%; */
+      padding: 0 32px;
+
+
+    }
+  }
+
+  @media (min-width: 1200px) {
+    body .navbar-expand-lg .container {
+      max-width: 1280px;
+    }
+  }
+
+  /* swiper */
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
+  }
+
+  .swiper {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (min-width: 768px) {
+    .swiper-slide img {
+
+      height: 796px;
+
+
+    }
+
+  }
+
+
+  /* 共用 */
+  .container {
+    width: 100%;
+    padding: 96px 20px;
+
+
+
+  }
+
+  p {
+    width: 100%;
+    margin: 0 auto;
+    color: #4B5563;
+  }
+
+  .font12 {
+    font-size: 12px;
+  }
+
+  .font14 {
+    font-size: 14px;
+  }
+
+  .font16 {
+    font-size: 16px;
+  }
+
+  .font18 {
+    font-size: 18px;
+  }
+
+  .font20 {
+    font-size: 20px;
+  }
+
+
+  .font24 {
+    font-size: 24px;
+  }
+
+  .font30 {
+    font-size: 30px;
+  }
+
+  /* ------------------ */
+  @media (min-width: 639px) {
+    .font24 {
+      font-size: 30px;
+    }
+
+    .font30 {
+      font-size: 36px;
+    }
+  }
+
+
+
+
+  /* part-1 */
+
+  .part1 .container .col {
+    margin: 0 0 80px;
+
+  }
+
+  .part1 .container .col h1 {
+    font-size: 1.5rem;
+  }
+
+  .part1 .container .rounded-pill {
+    width: 63.99px;
+    height: 3.99px;
+    background: #6366F1;
+    margin: 0 auto;
+    margin-top: 25px;
+
+  }
+
+  .container .rounded-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #E0E7FF;
+    margin: 0 auto 20px;
+
+  }
+
+  .container .rounded-circle img {
+    margin: 20px;
+  }
+
+  .part1 .container h2 {
+    font-size: 18px;
+    margin: 0 0 12px;
+  }
+
+  .part5 .container .row a,
+  .part1 .container .row a {
+    margin: 12px 0 0;
+    color: #6366F1;
+    text-decoration: none;
+
+  }
+
+  .container .row a img {
+    height: 16px;
+    width: 16px;
+  }
+
+
+  .container .row button {
+    font-size: 18px;
+    padding-left: 32px;
+    padding-right: 32px;
+    background-color: #6366F1;
+    color: rgb(255, 255, 255);
+    margin: 64px auto 0;
+    border: none;
+
+  }
+
+
+
+
+
+  /* ---------------------------- */
+
+
+
+  @media (min-width: 639px) {
+    .container {
+      max-width: 650px;
+    }
+
+    .part1 .container .col h1 {
+      font-size: 30px;
+    }
+
+    .part1 .container .col p {
+      max-width: 600px;
+
+    }
+  }
+
+  @media (min-width: 767px) {
+    .container {
+      max-width: 767px;
+    }
+
+    .part1 .container .col p {
+      max-width: 727.99px;
+
+    }
+
+  }
+
+  @media (min-width: 1023px) {
+    .container {
+      max-width: 1023.99px;
+    }
+
+    .part1 .container .col p {
+      max-width: 737.99px;
+
+    }
+
+  }
+
+  @media (min-width: 1279px) {
+    .container {
+      max-width: 1280px !important;
+    }
+
+    .part1 .container .col p {
+      max-width: 620px;
+
+    }
+
+  }
+
+  /* part-2 */
+
+  .part2 img {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .part2 .container .part2Row {
+    margin: 0 0 80px;
+  }
+
+  /* --------------- */
+
+  @media (min-width: 1023px) {
+    .part2 .container .part2Row p {
+      padding: 0 0 0 24px;
+
+    }
+
+    .part24 {
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+
+    .part28 {
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+
+  }
+
+  /* part-3 */
+  .part3 .container p {
+    margin: 0 0 80px;
+  }
+
+  .table thead tr td {
+    background-color: #F3F4F6;
+    font-size: 14px;
+    padding: 12px 16px;
+  }
+
+  .table tbody tr td {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  .table td {
+    border-top: none;
+  }
+
+  .table tbody tr td:last-child {
+    width: 40px;
+    padding: 15px 13px;
+  }
+
+
+  .table .bdt {
+    border-top: 2px solid #dee2e6;
+  }
+
+  .table .bdb {
+    border-bottom: 2px solid #dee2e6;
+  }
+
+  .part3 .container button {
+    background-color: #3B82F6;
+  }
+
+  .part3 .container a {
+    color: #3B82F6;
+    text-decoration: none;
+  }
+
+
+
+
+  /* ----------------- */
+  @media (min-width: 1023px) {
+    .part3 .container .row {
+      max-width: 655.98px;
+    }
+  }
+
+  @media (min-width: 1279px) {
+    .part3 .container .row {
+      max-width: 826.67px;
+
+    }
+  }
+
+  @media (min-width: 1279px) {
+    .part3 .container .row {
+      max-width: 826.67px;
+    }
+  }
+
+  @media (min-width: 1535px) {
+    .part3 .container .row {
+      max-width: 997.32px;
+    }
+  }
+
+  /* part-4 */
+  .part4 h1,
+  .part4 h2,
+  .part4 h3 {
+    font-weight: 400;
+  }
+
+  .ban {
+    width: 80px;
+    height: 3.99px;
+    background: #6366F1;
+  }
+
+  .part4 img {
+    width: 100%;
+  }
+
+  .part4 .part42 {
+    margin: 0 0 64px;
+  }
+
+  .part4 .w-100.p-4 {
+    background-color: #F3F4F6;
+  }
+
+  .part4 h3 {
+    color: #6366F1;
+  }
+
+  /* --------------------- */
+
+
+  @media (min-width: 1023px) {
+    .part4 .part41 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    .part42 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+  }
+
+  @media (min-width: 1279px) {
+    .part4 .card2 {
+      max-width: 25%;
+    }
+  }
+
+  /* part-5 */
+  .part5 .container .flex-column.bb {
+    margin: 0 0 40px;
+    padding: 0 0 40px;
+
+  }
+
+  /* -------------- */
+  @media (min-width: 639px) {
+
+    .part5 h2,
+    .part5 p,
+    .part5 a {
+      text-align: start !important;
+    }
+
+    .part5 .container .row .card1 {
+      flex-direction: row !important;
+    }
+
+    .part5 .container .row .card1 .rounded-circle {
+      width: 127.99px;
+      height: 127.99px;
+      margin: 0 40px 0 0;
+    }
+
+    .part5 .container .row .card1 .imgB {
+      width: 127.99px;
+      height: 63.99px;
+      margin: 32px 0px;
+    }
+
+    .part5 .container .row .card1-2 {
+      flex-direction: row-reverse !important;
+
+    }
+
+    .part5 .container .row .card1 .imgB-2 {
+      margin: 0 0 0 40px;
+    }
+
+
+
+  }
+
+  @media (min-width: 1023px) {
+    .part5 .container .row.m-0 {
+      max-width: 590.39px;
+    }
+  }
+
+  @media (min-width: 1279px) {
+    .part5 .container .row.m-0 {
+      max-width: 743.99px;
+    }
+  }
+
+  @media (min-width: 1535px) {
+    .part5 .container .row.m-0 {
+      max-width: 897.59px;
+    }
+  }
+
+  /* part-6 */
+
+  .part6 h1 {
+    font-size: 30px;
+  }
+
+  .part6 .MF {
+    font-size: 24px;
+  }
+
+  .part6 .part6-400 {
+    height: 256px;
+  }
+
+  .part6 .container .row61 img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .part6 .container .row61 .FF {
+    width: 20px;
+    height: 20px;
+
+  }
+
+  .part6 .container .row62 button {
+    width: 23.99px;
+    height: 23.99px;
+    border-radius: 50px;
+    border: 2px solid rgba(203 203 203 / 67%);
+  }
+
+  .part6 .container .row62 button:active {
+    outline: .8px solid rgba(0, 0, 0, .5);
+    outline-offset: 2px;
+  }
+
+  .part6 .container .row62 select {
+    padding: 8px 40px 8px 12px;
+    color: #4B5563;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+  }
+
+  .part6 .container .row62 select:active {
+    outline: 3px solid #abadef;
+    outline-offset: .9px;
+  }
+
+  .part6 .limg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-color: #E5E7EB;
+  }
+
+  .part6 .limg img {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+  }
+
+  /* --------------- */
+  @media (min-width: 1023px) {
+    .part6 .col-1023 {
+      max-width: 496px;
+
+    }
+
+    .part6 .part6-400 {
+      height: 496px;
+    }
+
+    .part6 .part6B {
+      padding-left: 40px;
+      padding-right: 0px;
+    }
+  }
+
+  /* part-7 */
+
+
+  .part7 h2 {
+    font-weight: 500;
+  }
+
+  .part7 h3 {
+    font-weight: 400;
+    color: #6B7280;
+  }
+
+  .part7 img {
+    height: 191.99px;
+  }
+
+  @media (min-width: 1023px) {
+    .part7 .card3 {
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+  }
+
+  /* map */
+  .map {
+    width: 100%;
+
+  }
+
+  .map .container {
+    height: 700px;
+    margin-top: -700px;
+  }
+
+  .map .mapcard {
+    opacity: 1;
+    z-index: 5;
+
+  }
+
+  .map .card4 {
+    padding: 32px;
+  }
+
+  .map input,
+  .map textarea {
+    border: 1px solid #b8b8b8;
+  }
+
+  .foc1:focus{
+    box-shadow: 0px 0px 3px 2px rgba(99, 102, 241, 0.4);
+  }
+
+
+  /* ------------ */
+
+  @media (min-width: 767px) {
+    .map .card4 {
+      flex: 0 0 50%;
+      max-width: 50%;
+
+
+    }
+  }
+
+  @media (min-width: 1023px) {
+    .map .card4 {
+      flex: 0 0 33.333333333%;
+      max-width: 33.3333333333%;
+    }
+  }
+
+  /* 終於 */
+  .footer a {
+    color: #6B7280;
+    text-decoration: none;
+  }
+
+  .footer h2 p:first-child {
+    margin:12px 0 0;
+  }
+
+  .footer .card5 {
+    height: 167.95px;
+  }
+
+  .footer-leftbox {
+    margin: 0 0 40px 0;
+  }
+
+
+  /* ----------------- */
+  @media (min-width: 767px) {
+    .footer .container .NNN {
+      flex-direction: row !important;
+      
+    }
+
+    .footer-leftbox {
+      max-width: 256px;
+      margin: 0px;
+    }
+  
+
+    .footer .footer-Rightbox {
+      padding: 0 0 0 80px !important;
+      display: flex;
+      flex-direction: row !important;
+      width:calc(100% - 256px);
+      
+      
+    }
+    .footer .card5{
+      flex:0 0 50%;
+      max-width: 50%;
+    }
+
+  }
+  @media (min-width: 1023px){
+    .footer .card5{
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+
+  }
+
+
+  /* footer */
+  .trueFooter{
+    background-color: #F3F4F6;
+  }
+  
+  .trueFooter img{
+    width: 20px;
+    height: 20px;
+    margin: 0 5px 0 5px;
+  }
+  .trueFooter .container{
+    padding: 16px 20px;
+  }
+ 
+
+
+/* ---------- */
+@media (max-width: 768px){
+  .trueFooter .container{
+    flex-direction: column;
+  }
+  .trueFooter p{
+    text-align: center;
+  }
+  .trueFooter .Ppp{
+    justify-content: center;
+    margin: 8px 0 0 !important;
+  }
+
+}
+
+
+
+</style>
+
+
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-light m-auto p-0">
+    <div class="qq p-3 p-md-0 d-flex justify-content-between">
+
+      <div class="container">
+        <a class="navbar-brand m-0 p-0 p-md-3" href="#"><img class="logo act1 " src="./picture/LOGO/資產 1 (1).svg" alt=""></a>
+
+        <button class="navbar-toggler p-0 rounded-lg" type="button" data-toggle="collapse"
+          data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span><img class="menu1" src="./picture/nav/nav-槓槓.svg" alt=""><img class="menu2" tabindex="1"
+              src="./picture/nav/nav-叉叉.svg" alt=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-row-reverse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+
+            <li class="nav-item active ">
+              <a class="nav-link px-3 mt-2 mt-md-0 ml-md-3 rounded-lg text-center" href="#">Blog <span
+                  class="sr-only"></span></a>
+            </li>
+
+            <li class="nav-item active text-center">
+              <a class="nav-link px-3 mt-2 mt-md-0 ml-md-3 rounded-lg " href="#">Portfolio</a>
+            </li>
+
+            <li class="nav-item active text-center">
+              <a class="nav-link px-3 mt-2 mt-md-0 ml-md-3 rounded-lg " href="#">About</a>
+            </li>
+            <li class="nav-item active text-center">
+              <a class="nav-link  px-3 mt-2 mt-md-0 ml-md-3 rounded-lg " href="#">Contact</a>
+            </li>
+<!-- 討厭的地方辣 -->
+            <li class="nav-item active text-center d-flex justify-content-center dropdown">
+
+              <a class="nav-link px-2 pt-2 pb-3 mt-2 py-md-2 px-md-1 mt-md-0 ml-md-2 " href="#"><i
+                  class="fa-solid fa-cart-shopping act1"></i></a>
+
+              <a class="nav-link mt-1 px-2 px-md-1 py-md-1 ml-md-3 dropdown-toggle " href="#"
+                id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-expanded="false">
+                <i class="fa-solid fa-circle-user act1"></i>
+              </a>
+
+              <div class="Ccc dropdown-menu shadow-sm p-2 " aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item py-2 px-3 act1" href="#">Login
+                </a>
+              </div>
+
+            </li>
+
+
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+
+        <picture>
+          <img src="./picture/背景圖/820A2554-26DD-4CBE-ADE1-C05212A56494.jpg" alt="">
+        </picture>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <img src="./picture/背景圖/可.jpg" alt="">
+        </picture>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <img src="./picture/背景圖/愛.jpg" alt="">
+        </picture>
+      </div>
+      <div class="swiper-slide">
+        <picture>
+          <img src="./picture/背景圖/辣.jpg" alt="">
+        </picture>
+      </div>
+
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <!-- part-1 -->
+  <section class="part1">
+
+    <div class="container ">
+      <div class="col p-0 justify-content-center">
+        <h1 class="mb-3 p-0 text-center">Raw Denim Heirloom Man Braid</h1>
+        <p class=" p-0 text-center justify-content-center">Blue bottle crucifix vinyl
+          post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi
+          pug.</p>
+        <div class=" rounded-pill"></div>
+      </div>
+
+      <div class="row ">
+        <!-- 卡片 -->
+        <div class="col-md-4 p-3 d-flex flex-column ">
+          <div class="rounded-circle "><img src="./picture/part-1/1-1.svg" alt=""></div>
+
+          <div class="d-flex flex-column text-center">
+            <h2 class="text-center">Shooting Stars</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a href="">Learn More <img class="ml-1" src="./picture/part-1/svgexport-3.svg" alt=""></a>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4 p-3 d-flex flex-column ">
+          <div class="rounded-circle "><img src="./picture/part-1/1-2.svg" alt=""></div>
+
+          <div class="d-flex flex-column text-center">
+            <h2 class="text-center">The Catalyzer</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a href="">Learn More <img class="ml-1" src="./picture/part-1/svgexport-3.svg" alt=""></a>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-4 p-3 d-flex flex-column ">
+          <div class="rounded-circle "><img src="./picture/part-1/1-3.svg" alt=""></div>
+
+          <div class="d-flex flex-column text-center">
+            <h2 class="text-center">Neptune</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a href="">Learn More <img class="ml-1" src="./picture/part-1/svgexport-3.svg" alt=""></a>
+
+          </div>
+
+        </div>
+        <button class="rounded-lg py-2">button</button>
+
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- part-2 -->
+  <section class="part2">
+    <div class="container">
+      <div class="row part2Row">
+        <h1 class="font24 part24 p-0 mb-3">Master Cleanse
+          Reliac Heirloom</h1>
+        <p class="part28 pr-0">Whatever cardigan tote bag tumblr hexagon
+          brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them
+          man bun deep jianbing selfies heirloom.</p>
+      </div>
+      <div class="row w-100 m-auto">
+        <!-- 大格子-左右 -->
+
+        <div class="col-6">
+          <!-- 左上 -->
+          <div class="row">
+            <div class="col-6 p-2">
+              <img src="./picture/part-2/500x300.png" alt="">
+            </div>
+            <div class="col-6 p-2">
+              <img src="./picture/part-2/501x301.png" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 p-2">
+              <img src="./picture/part-2/600x360.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 p-2">
+              <img src="./picture/part-2/601x361.png" alt="">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 p-2">
+              <img src="./picture/part-2/502x302.png" alt="">
+            </div>
+            <div class="col-6 p-2">
+              <img src="./picture/part-2/503x303.png" alt="">
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- part-3 -->
+  <section class="part3">
+    <div class="container">
+      <h1 class="mb-2 text-center font30">Pricing</h1>
+      <div class="row m-auto">
+        <p class="text-center">Banh mi cornhole echo park skateboard authentic crucifix
+          neutra tilde lyft biodiesel artisan direct trade mumblecore 3 wolf moon twee</p>
+        <!-- 表格 -->
+        <table class="table ">
+          <thead>
+            <tr>
+              <td scope="col">Plan</td>
+              <td scope="col">Spee</td>
+              <td scope="col">Storage</td>
+              <td scope="col">Price</td>
+              <td scope="col"></td>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td scope="row">Start</td>
+              <td>5Mb/s</td>
+              <td>15GB</td>
+              <td>Free</td>
+              <td><input type="radio"></td>
+            </tr>
+            <tr>
+              <td scope="row" class="bdt">Pro</td>
+              <td class="bdt">25Mb/s</td>
+              <td class="bdt">25GB</td>
+              <td class="bdt">$24</td>
+              <td class="bdt"><input type="radio"></td>
+            </tr>
+            <tr>
+              <td scope="row" class="bdt">Business</td>
+              <td class="bdt">36Mb/s</td>
+              <td class="bdt">40GB</td>
+              <td class="bdt">$50</td>
+              <td class="bdt"><input type="radio"></td>
+            </tr>
+            <tr>
+              <td scope="row" class="bdt bdb">Exclusive</td>
+              <td class="bdt bdb">48Mb/s</td>
+              <td class="bdt bdb">120G</td>
+              <td class="bdt bdb">$72</td>
+              <td class="bdt bdb"><input type="radio"></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="w-100 d-flex justify-content-between">
+          <a class="pl-3" href="">Learn More <img class="ml-1" src="./picture/part-3/3-2.svg" alt=""></a>
+
+          <button class="rounded-lg py-2 px-4 m-0">button</button>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- part-4 -->
+  <section class="part4">
+    <div class="container">
+      <div class="row m-0">
+        <div class="part41 w-100">
+          <h1 class="font24 col-12 mb-2 p-0">Pitchfork Kickstarter Taxidermy
+          </h1>
+          <div class="mb-4 ban rounded-pill"></div>
+        </div>
+        <p class="col-12 part42 p-0">Whatever cardigan tote bag tumblr hexagon brooklyn
+          asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them man bun
+          deep jianbing selfies heirloom prism food truck ugh squid celiac humblebrag.</p>
+
+      </div>
+      <!-- 卡片2號 -->
+      <div class="row">
+        <div class="col-12 col-md-6 rounded-lg card2 p-3">
+          <div class="w-100 p-4">
+            <img class="rounded-lg mb-4" src="./picture/part-4/720x400.png" alt="">
+
+            <h3 class="font12 m-0">SUBTITLE</h3>
+            <h2 class="p-0 mb-3 font18">Chichen Itza</h2>
+            <p class="">Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 rounded-lg card2 p-3">
+          <div class="w-100 p-4">
+            <img class="rounded-lg mb-4" src="./picture/part-4/720x400.png" alt="">
+
+            <h3 class="font12 m-0">SUBTITLE</h3>
+            <h2 class="p-0 mb-3 font18">Colosseum Roma</h2>
+            <p class="">Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 rounded-lg card2 p-3">
+          <div class="w-100 p-4">
+            <img class="rounded-lg mb-4" src="./picture/part-4/720x400.png" alt="">
+
+            <h3 class="font12 m-0">SUBTITLE</h3>
+            <h2 class="p-0 mb-3 font18">Great Pyramid of Giza</h2>
+            <p class="">Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 rounded-lg card2 p-3">
+          <div class="w-100 p-4">
+            <img class="rounded-lg mb-4" src="./picture/part-4/720x400.png" alt="">
+
+            <h3 class="font12 m-0">SUBTITLE</h3>
+            <h2 class="p-0 mb-3 font18">San Francisco</h2>
+            <p class="">Fingerstache flexitarian street art 8-bit waistcoat. Distillery
+              hexagon disrupt edison bulbche.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- part-5 -->
+  <section class="part5">
+    <div class="container">
+      <div class="row m-auto m-0">
+        <!-- 卡片變形 -->
+        <div class="col-12 d-flex p-0 flex-column card1">
+          <div class="rounded-circle "><img class="imgB " src="./picture/part-1/1-1.svg" alt=""></div>
+
+          <div class="d-flex flex-column bb text-center">
+            <h2 class="text-center font18 fontWW">Shooting Stars</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a class="ppcolor" href="">Learn More <img class="ml-1 imgS" src="./picture/part-1/svgexport-3.svg"
+                alt=""></a>
+
+          </div>
+
+        </div>
+        <!-- ??? -->
+        <hr>
+
+        <div class="col-12 d-flex p-0 flex-column card1 card1-2">
+          <div class="rounded-circle imgB-2"><img class="imgB " src="./picture/part-1/1-2.svg" alt=""></div>
+
+          <div class="d-flex flex-column bb text-center">
+            <h2 class="text-center font18 fontWW">The Catalyzer</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a class="ppcolor" href="">Learn More <img class="ml-1 imgS" src="./picture/part-1/svgexport-3.svg"
+                alt=""></a>
+
+          </div>
+
+        </div>
+
+        <div class="col-12 d-flex p-0 flex-column card1 .bb ">
+          <div class="rounded-circle "><img class="imgB " src="./picture/part-1/1-3.svg" alt=""></div>
+
+          <div class="d-flex flex-column bb text-center">
+            <h2 class="text-center font18 fontWW">Neptune</h2>
+            <p class="text-center">Blue bottle crucifix vinyl post-ironic four dollar toast vegan
+              taxidermy. Gastropub indxgo juice poutine, ramps microdosing banh mi pug VHS try-hard.</p>
+            <a class="ppcolor" href="">Learn More <img class="ml-1 imgS" src="./picture/part-1/svgexport-3.svg"
+                alt=""></a>
+
+          </div>
+
+        </div>
+
+        <button class="rounded-lg py-2">button</button>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- part-6 -->
+  <section class="part6">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-1023 part6T p-0">
+          <img class="w-100 part6-400 " src="./picture/part-6/400x400 (1).png" alt="">
+        </div>
+        <!-- 下面 -->
+        <div class="col-12 col-1023 py-4 part6B">
+          <h2 class="font14 mt-4">BRAND NAME</h2>
+          <h1>The Catcher in the Rye</h1>
+          <!-- 第一陀 -->
+          <div class="row mx-0 mt-2 mb-4 row61 d-flex">
+            <img class="my-1" src="./picture/part-6/6-1.svg" alt="">
+            <img class="my-1" src="./picture/part-6/6-1.svg" alt="">
+            <img class="my-1" src="./picture/part-6/6-1.svg" alt="">
+            <img class="my-1" src="./picture/part-6/6-1.svg" alt="">
+            <img class="my-1 mr-2" src="./picture/part-6/6-5.svg" alt="">
+            <span class="ml-1">4 Reviews</span>
+            <img class="FF ml-4" src="./picture/part-6/6-fb.svg" alt="">
+            <img class="FF" src="./picture/part-6/6-bb.svg" alt="">
+            <img class="FF " src="./picture/part-6/6-tt.svg" alt="">
+          </div>
+          <p>Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy
+            chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry
+            +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar
+            banjo tattooed umami cardigan.</p>
+          <!-- 第二陀 -->
+          <div class="row m-0 row62 mt-4 mb-5">
+            <!-- 左 -->
+            <div class="row m-0 d-flex align-items-center">
+              <span class="mr-2">Color</span>
+              <button class="ppBcolor ml-1 mt-0 p-0 bg-light"></button>
+              <button class="ml-1 mt-0 p-0 bg-dark"></button>
+              <button class="ml-1 mt-0 p-0"></button>
+            </div>
+            <!-- 右 -->
+            <div class="row m-0 d-flex align-items-center ml-4">
+              <span class="mr-2">Size</span>
+              <select class="ml-1 rounded-lg" name="" id=""></select>
+
+            </div>
+          </div>
+          <!-- 下面 -->
+          <div class="row mt-n2 mx-0 d-flex justify-content-between">
+            <span class="MF">$58.00</span>
+            <div class="row m-0 d-flex">
+              <button class="rounded-lg py-2 px-4 m-0">button</button>
+              <div class="limg ml-3">
+                <img src="./picture/part-6/6-愛心.svg" alt="">
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- part-7 -->
+  <section class="part7">
+    <div class="container">
+      <div class="row p-0">
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">The Catalyzer</h2>
+          <p class="mt-1">$16.00</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">Shooting Start</h2>
+          <p class="mt-1">$21.15</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">Neptune</h2>
+          <p class="mt-1">$12.00</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">The 400 Blows</h2>
+          <p class="mt-1">$18.40</p>
+        </div>
+
+      </div>
+      <div class="row p-0">
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">The Catalyzer</h2>
+          <p class="mt-1">$16.00</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">Shooting Start</h2>
+          <p class="mt-1">$21.15</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">Neptune</h2>
+          <p class="mt-1">$12.00</p>
+        </div>
+        <div class="col-12 col-md-6 py-3 card3">
+          <img class="w-100 p-0 rounded-lg" src="./picture/part-7/420x260.png" alt="">
+          <h3 class="font12 mt-3 mb-1">CATEGPRY</h3>
+          <h2 class="font18">The 400 Blows</h2>
+          <p class="mt-1">$18.40</p>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <!-- map -->
+  <section class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d82382.61942074804!2d120.62341061031576!3d24.142531111899427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d750627a6b7%3A0xbcfe6bac3289fc4!2z5pW45L2N5pa55aGK5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1652154930098!5m2!1szh-TW!2stw"
+      width="1920" height="700" style="border:0; filter:grayscale(80%);" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    <!-- 框框 -->
+    <div class="container">
+      <div class="row p-0 mx-auto d-flex flex-row-reverse ">
+        <div class="w-100  card4 bg-light rounded-lg mapcard">
+          <h2 class="font18 mb-1">Feedback</h2>
+          <p class="mb-4">Post-ironic portland shabby chic echo park, banjo fashion axe
+          </p>
+          <div class="mt-n1 mb-3 d-flex flex-column">
+            <label class="font14" for="email">Email</label>
+            <input class="rounded-lg bg-light pl-2 py-1 foc1" type="email" tabindex="1" id="email">
+          </div>
+
+          <div class="mt-n1 mb-3 d-flex flex-column">
+            <label class="font14" for="123">Message</label>
+            <textarea class="rounded-lg bg-light pl-2 py-1 foc1" tabindex="1" name="" id="123" cols="30" rows="5"></textarea>
+          </div>
+          <button class="rounded-lg py-2 px-4 mb-3 mx-auto mt-0 w-100 border-0">button</button>
+          <p class="mt-n1">Chicharrones blog helvetica normcore iceland tousled brook viral
+            artisan.</p>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- 快結束了QQ -->
+  <section class="footer">
+    <div class="container">
+      <div class="NNN row p-0 m-0 d-flex">
+        <!-- 左 -->
+        <div class="footer-leftbox mx-auto">
+          <div class="d-flex justify-content-center">
+            <img class="mr-3" src="./picture/footer/8-1.svg" alt="">
+            <span class="ml-n1 font20">數位方塊</span>
+          </div>
+          <p class="font14 mt-2 text-center">Air plant banjo lyft occupy retro adaptogen indego</p>
+        </div>
+        <!-- 右 -->
+        <div class="row p-0 m-0 footer-Rightbox mx-auto">
+          <!-- 1 -->
+         
+          <div class="w-100 card5">
+            <h2 class="card5M font14 fontWW text-center ">CATEGORIES</h2>
+
+              <p class="text-center"><a href="">First Link</a></p>
+              <p class="text-center"><a href="">Second Link</a></p>
+              <p class="text-center"><a href="">Thier Link</a></p>
+              <p class="text-center"><a href="">Fourth Link</a></p>
+            
+            
+          </div>
+          <div class="w-100 card5">
+            <h2 class="card5M font14 fontWW text-center ">CATEGORIES</h2>
+
+              <p class="text-center"><a href="">First Link</a></p>
+              <p class="text-center"><a href="">Second Link</a></p>
+              <p class="text-center"><a href="">Thier Link</a></p>
+              <p class="text-center"><a href="">Fourth Link</a></p>
+            
+            
+          </div>
+          <div class="w-100 card5">
+            <h2 class="card5M font14 fontWW text-center ">CATEGORIES</h2>
+
+              <p class="text-center"><a href="">First Link</a></p>
+              <p class="text-center"><a href="">Second Link</a></p>
+              <p class="text-center"><a href="">Thier Link</a></p>
+              <p class="text-center"><a href="">Fourth Link</a></p>
+            
+            
+          </div>
+          <div class="w-100 card5">
+            <h2 class="card5M font14 fontWW text-center ">CATEGORIES</h2>
+
+              <p class="text-center"><a href="">First Link</a></p>
+              <p class="text-center"><a href="">Second Link</a></p>
+              <p class="text-center"><a href="">Thier Link</a></p>
+              <p class="text-center"><a href="">Fourth Link</a></p>
+            
+            
+          </div>
+          
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <section class="trueFooter">
+    <div class="container d-flex justify-content-between">
+      <div class="Rrr row p-0 m-0 ">
+        <p class="font14">© 2020 Tailblocks — @Knyttneve</p>
+        
+      </div>
+      <div class="row p-0 m-0 d-flex Ppp">
+        <img src="./picture/footer/6-fb.svg" alt="">
+        <img src="./picture/footer/6-bb.svg" alt="">
+        <img src="./picture/footer/8-3.svg" alt="">
+        <img src="./picture/footer/1652165084435.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js"
+    integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2"
+    crossorigin="anonymous"></script>
+
+  <!-- swiper -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+
+
+
+</body>
+
+</html>
